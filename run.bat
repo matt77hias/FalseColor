@@ -1,0 +1,1 @@
+python "C:\Users\Matthias\Documents\Courses\Masterproef\pbrt\Tools\FalseColor\src\falsecolor.py" %1
