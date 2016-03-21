@@ -23,6 +23,10 @@ fig, ax = plt.subplots()
 plt.subplots_adjust(left=0.25)
 ax_color = 'lightgoldenrodyellow'
 
+title = fname
+fig.canvas.set_window_title(title)
+fig.suptitle(title)
+
 # -- DATA --
 D = load_data(fname, spp=search_spp(fname))
 imgplt = show_data(D, cmap='jet')
