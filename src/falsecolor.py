@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import re
 import sys
 import matplotlib.pyplot as plt
@@ -23,7 +24,7 @@ fig, ax = plt.subplots()
 plt.subplots_adjust(left=0.25)
 ax_color = 'lightgoldenrodyellow'
 
-title = fname
+title = os.path.basename(fname)
 fig.canvas.set_window_title(title)
 fig.suptitle(title)
 
