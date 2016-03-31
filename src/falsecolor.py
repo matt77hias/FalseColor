@@ -9,13 +9,11 @@ fname = sys.argv[1]
 
 def search_spp(fname):
     found = re.search('_S([0-9]+)', fname)
-    if found == None:
-        return 1
-    else:
-        return found.group(1)
+    if found == None:     return 1
+    else:                 return found.group(1)
 
-def load_data(fname, dtype=np.int64, spp=1):
-    return np.loadtxt(fname, dtype=dtype, delimiter=' ', ndmin = 2) / float(spp)
+def load_data(fname, dtype=np.int64):
+    return np.loadtxt(fname, dtype=dtype, delimiter=' ', ndmin = 2)
     
 def show_data(D, cmap='jet'):
     return plt.imshow(D, cmap=cmap)
@@ -29,13 +27,16 @@ fig.canvas.set_window_title(title)
 fig.suptitle(title)
 
 # -- DATA --
-D = load_data(fname, spp=search_spp(fname))
+D = load_data(fname)
+ax.set_title(np.sum(D))
+D = D / float(search_spp(fname))
+
 imgplt = show_data(D, cmap='jet')
 plt.colorbar()
 
 # -- LOG SELECTION --
 ax_log = plt.axes([0.25, 0.1, 0.4, 0.03], axisbg=ax_color)
-slider = Slider(ax_log, 'Log', 1.0, 2.0, valinit=1.0)
+slider = Slider(ax_log, 'Log', 1.0, 1.5, valinit=1.0)
 def update(val):
     if (val == 1.0):
         imgplt.set_data(D)
