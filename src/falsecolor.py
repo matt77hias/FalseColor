@@ -16,7 +16,7 @@ def load_data(fname, dtype=np.int64):
     return np.loadtxt(fname, dtype=dtype, delimiter=' ', ndmin = 2)
     
 def show_data(D, cmap='jet'):
-    return plt.imshow(D, cmap=cmap)
+    return plt.imshow(D, cmap=cmap, interpolation='none')
 
 fig, ax = plt.subplots()
 plt.subplots_adjust(left=0.25)
