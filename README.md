@@ -1,5 +1,5 @@
 # FalseColor
-FalseColor tools
+FalseColor utilities
 
 Use
 --------
