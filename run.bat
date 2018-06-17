@@ -1,1 +1,1 @@
-python "C:\Users\Matthias\Documents\Courses\Masterproef\pbrt\Tools\FalseColor\src\falsecolor.py" %1
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Anaconda2_64\python.exe" "D:\Users\Matthias\Documents\Visual Studio 2017\Projects\Python\FalseColor\src\falsecolor.py" %1
